@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Error from '../Error/Error';
+import { obtenerDiferenciaPlan, obtenerDescuentoPeriocidad, obtenerDescuentoDigital  } from '../../middleware/helper'
 
 export default function Formulario() {
 
@@ -26,15 +27,25 @@ export default function Formulario() {
     const onSubmit = e => {
         e.preventDefault();
 
-        if( plan.trim() === '' || idiomas.trim() === '' || pago.trim() === '' || digital.trim() === '' ) {
+        if( plan.trim() === '' || idiomas.trim() === '' || pago.trim() === '' || digital.trim() === '' || idiomas < 1){
             guardarError(true)
-            console.log(error)
             return;
         }
 
         guardarError(false);
 
 
+        // Precio base inicial
+        const inicial = obtenerDiferenciaPlan(plan)
+        
+        // Idiomas
+        const lenguages = inicial*parseInt(idiomas)
+       
+        // Pago
+        const periocidad = lenguages*obtenerDescuentoPeriocidad(pago)
+        
+        // Digital
+        const mktgDigital = periocidad*obtenerDescuentoDigital(digital)
 
     }
 
@@ -107,7 +118,7 @@ export default function Formulario() {
             />Completo
 
 
-            <button type="button">Calcular</button>
+            <button type="submit">Calcular</button>
 
         </form>
     )
