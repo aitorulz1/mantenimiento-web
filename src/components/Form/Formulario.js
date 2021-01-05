@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Error from '../Error/Error';
 import { obtenerDiferenciaPlan, obtenerDescuentoPeriocidad, obtenerDescuentoDigital  } from '../../middleware/helper'
 
-export default function Formulario() {
+export default function Formulario({guardarFinal, guardarCargando}) {
 
 
     const [ data, guardarData ] = useState({
@@ -36,16 +36,43 @@ export default function Formulario() {
 
 
         // Precio base inicial
-        const inicial = obtenerDiferenciaPlan(plan)
+        const inicial = obtenerDiferenciaPlan(plan);
         
         // Idiomas
-        const lenguages = inicial*parseInt(idiomas)
+        const lenguages = inicial*parseInt(idiomas);
        
         // Pago
-        const periocidad = lenguages*obtenerDescuentoPeriocidad(pago)
+        const periocidad = lenguages*obtenerDescuentoPeriocidad(pago);
         
         // Digital
-        const mktgDigital = periocidad*obtenerDescuentoDigital(digital)
+        const mktgDigital = periocidad*obtenerDescuentoDigital(digital);
+
+
+
+        // Reseteamos Form
+        guardarData ({
+                plan: '',
+                idiomas: '',
+                pago: '',
+                digital: '',
+        })
+
+        guardarCargando(true);
+        
+
+        setTimeout(() => {
+
+            guardarCargando(false);
+      
+            guardarFinal({
+                presupuesto: mktgDigital,
+                data
+            })
+            
+          }, 3000)
+
+
+       
 
     }
 
@@ -77,7 +104,7 @@ export default function Formulario() {
             <input
                 type='number'
                 name='idiomas'
-                placeholder='Ej: 2'
+                placeholder='Min: 1'
                 value={idiomas}
                 onChange={onChange}
             />

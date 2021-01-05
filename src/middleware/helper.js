@@ -51,3 +51,10 @@ export const obtenerDescuentoDigital = (digital) => {
     return seosem;
 
 }
+
+
+export const primeraMayuscula = ( texto ) => {
+
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+
+} 
