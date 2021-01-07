@@ -1,9 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 export default function Resultado({presupuesto}) {
+
+ 
     return (
-   
-            (presupuesto === 0) ? 'Inserta los datos' : {presupuesto}
+        <div>
+            {(presupuesto === 0) ? 'No hay datos' : presupuesto}
+        </div>
    
     )
 }

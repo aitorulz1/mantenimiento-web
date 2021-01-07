@@ -45,7 +45,7 @@ export default function Formulario({guardarFinal, guardarCargando}) {
         const periocidad = lenguages*obtenerDescuentoPeriocidad(pago);
         
         // Digital
-        const mktgDigital = periocidad*obtenerDescuentoDigital(digital);
+        const presupuesto = periocidad*obtenerDescuentoDigital(digital);
 
 
 
@@ -65,7 +65,7 @@ export default function Formulario({guardarFinal, guardarCargando}) {
             guardarCargando(false);
       
             guardarFinal({
-                presupuesto: mktgDigital,
+                presupuesto,
                 data
             })
             

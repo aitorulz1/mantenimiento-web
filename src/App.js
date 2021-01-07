@@ -10,7 +10,7 @@ import Spinner from './components/Extras/Spinner';
 function App() {
 
 
-  const [final, guardarFinal] = useState({
+  const [ final, guardarFinal ] = useState({
     presupuesto: 0,
     data: {
       plan: '',
@@ -20,9 +20,12 @@ function App() {
     }
   })
 
-  const [ cargando, guardarCargando ] = useState(false);
 
   const { data, presupuesto } = final;
+
+  const [ cargando, guardarCargando ] = useState(false);
+
+
 
 
 
@@ -41,21 +44,17 @@ function App() {
         guardarCargando={guardarCargando}
       />
 
+      {cargando ? <Spinner /> : null }
+
       <Summary 
         data = {data}
       />
 
-      { cargando ? <Spinner /> : null}
-
-      { !cargando ? 
-      
       <Resultado
-        presupuesto = {presupuesto}
+        presupuesto = { presupuesto }
       />
 
-      : null
-      
-      }
+
 
     </div>
   );
