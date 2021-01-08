@@ -1,0 +1,33 @@
+.summary-container {
+        position: relative;
+        display: table;
+        background-color: #dedede;
+        color: #3a3a3a;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 470px;
+        border-radius: 5px;
+        padding: 20px 0px 40px 0px;
+}
+
+.summary-line{
+    margin: 0 auto;
+    padding: 10px 0px;
+    width: 100%;
+    max-width: 285px;
+    border-bottom: 1px solid #67ccc3;
+    display: table;
+}
+
+span.summary{
+    font-weight: 500;
+    text-align: left;
+    color: #000;
+    float: left;
+    padding-left: 35px;
+}
+
+span.summary-answer{
+    float: right;
+    padding-right: 35px;
+}

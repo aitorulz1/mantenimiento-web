@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    background: #f9f9f9;
+}
+
+.body {
+    position: relative;
+    width: 100%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 760px;
+    display: table;
+    margin-bottom: 50px;
+}
+
+.form-wrapper {
+    padding: 5%;
+    background: #ececec;
+}

@@ -1,0 +1,70 @@
+.form-wrapper form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.plan, .digital {
+    width: 100%;
+    padding: 5px 0px 0px 0px;
+}
+
+.plan label, .digital label {
+    width: 100%;
+    display: table;
+    font-family: cursive;
+}
+
+.plan select {
+    width: 90%;
+    height: 29px;
+    margin: 2.5%;
+
+    border: none;
+    border-bottom: 2px solid #dcdcdc;
+    font-family: cursive;
+    padding: 0px 10px;
+}
+
+.plan input {
+    width: 90%;
+    height: 29px;
+    margin: 2.5%;
+
+    border: none;
+    border-bottom: 2px solid #dcdcdc;
+    font-family: cursive;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+
+.digital-input-container{
+    background-color: #f9f9f9;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    display: table;
+}
+
+.digital-input-single{
+    width: 50%;
+    float: left;
+}
+
+.calcular{
+    box-shadow:inset 0px 34px 0px -15px #353333;
+    background-color:#000000;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:9px 0px;
+    margin: 20px 0px;
+    width: 100%;
+    text-decoration:none;
+}

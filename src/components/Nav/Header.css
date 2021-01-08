@@ -1,0 +1,16 @@
+.header{
+    text-align: center;
+}
+
+.logo{
+    margin: 35px 0px 15px 0px;
+}
+
+.logo img{
+    width: 50px;
+}
+
+.title {
+    font-family: fantasy;
+    margin-bottom: 30px;
+}

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Error from '../Error/Error';
 import { obtenerDiferenciaPlan, obtenerDescuentoPeriocidad, obtenerDescuentoDigital  } from '../../middleware/helper'
 
+import './Formulario.css'
+
 export default function Formulario({guardarFinal, guardarCargando}) {
 
 
@@ -72,8 +74,6 @@ export default function Formulario({guardarFinal, guardarCargando}) {
           }, 3000)
 
 
-       
-
     }
 
 
@@ -83,6 +83,8 @@ export default function Formulario({guardarFinal, guardarCargando}) {
         >
 
             { error ? <Error message='Todos los campos son obligatorios' /> : null }
+
+        <div className="plan">
 
             <label>Plan</label>
 
@@ -97,8 +99,11 @@ export default function Formulario({guardarFinal, guardarCargando}) {
                 <option value="top">top</option>
 
             </select>
+
+        </div>
             
-            
+        <div className="plan">
+
             <label>Idiomas</label>
 
             <input
@@ -109,6 +114,9 @@ export default function Formulario({guardarFinal, guardarCargando}) {
                 onChange={onChange}
             />
             
+        </div>
+
+        <div className="plan">
             
             <label>Pago</label>
 
@@ -125,27 +133,43 @@ export default function Formulario({guardarFinal, guardarCargando}) {
             
             </select>
 
+        </div>
+
+        <div className="digital">
             
             <label>Digital</label>
-            
-            <input
-                type="radio"
-                name="digital"
-                value='basico'
-                checked={digital === 'basico'}
-                onChange={onChange}
-            />Básico
-            
-            <input
-                type="radio"
-                name="digital"
-                value='completo'
-                checked={digital === 'completo'}
-                onChange={onChange}
-            />Completo
 
+            <div className="digital-input-container">
+            
+                <div className="digital-input-single">
+            
+                    <input
+                        type="radio"
+                        name="digital"
+                        value='basico'
+                        checked={digital === 'basico'}
+                        onChange={onChange}
+                    />  Básico
 
-            <button type="submit">Calcular</button>
+                </div>
+
+                <div className="digital-input-single">
+                
+                    <input
+                        type="radio"
+                        name="digital"
+                        value='completo'
+                        checked={digital === 'completo'}
+                        onChange={onChange}
+                    />  Completo
+
+                </div>
+
+            </div>
+
+        </div>
+
+            <button className="calcular" type="submit">Calcular</button>
 
         </form>
     )

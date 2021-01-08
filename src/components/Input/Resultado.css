@@ -1,0 +1,15 @@
+.resultado-container {
+    position: relative;
+    display: table;
+    background-color: #042724;
+    color: #04ffea;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 470px;
+    border-radius: 5px;
+    padding: 20px 0px 20px 0px;
+    font-size: 24px;
+    font-family: fangsong;
+}
+

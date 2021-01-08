@@ -6,6 +6,9 @@ import Summary from './components/Input/Summary';
 import Resultado from './components/Input/Resultado';
 
 import Spinner from './components/Extras/Spinner';
+import Button from './components/Button/Button';
+
+import './App.css'
 
 function App() {
 
@@ -25,6 +28,8 @@ function App() {
 
   const [ cargando, guardarCargando ] = useState(false);
 
+  const [ pressed, guardarPressed ] = useState(false);
+
 
 
 
@@ -34,28 +39,55 @@ function App() {
 
 
   return (
-    <div>
-      <Header 
-        titulo="{wewebs}"
-      />
+    <div className="body">
+    
 
-      <Formulario 
-        guardarFinal={guardarFinal}
-        guardarCargando={guardarCargando}
-      />
+    
 
-      {cargando ? <Spinner /> : null }
+          <Header 
+            titulo="manetinimientoWeb"
+          />
 
-      <Summary 
-        data = {data}
-      />
+          <div className="wrapper">
 
-      <Resultado
-        presupuesto = { presupuesto }
-      />
+          {!pressed ?
+          
+            <Button
+                guardarPressed = {guardarPressed}
+            />
+
+          :
+
+            <div className="form-wrapper">
+
+              <Formulario 
+                guardarFinal={guardarFinal}
+                guardarCargando={guardarCargando}
+              />
+
+              { cargando ? <Spinner /> : null }
+
+              <Summary 
+                data = { data }
+              />
+
+              { cargando ? null :
+
+              <Resultado
+                presupuesto = { presupuesto }
+              />
+
+              }
+
+            </div>
+
+          }
 
 
 
+
+      </div>
+    
     </div>
   );
 }

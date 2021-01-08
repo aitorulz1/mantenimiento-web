@@ -1,8 +1,18 @@
+.spinner-container{
+  width: 100%;
+  position: relative;
+  display: table;
+  padding: 30px 0px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
 .sk-chase {
     width: 40px;
     height: 40px;
     position: relative;
     animation: sk-chase 2.5s infinite linear both;
+    display: inline-block;
   }
   
   .sk-chase-dot {
