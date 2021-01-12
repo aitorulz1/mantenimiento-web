@@ -1,0 +1,65 @@
+.close {
+    position: absolute;
+    right: 3%;
+    top: 6%;
+    background-image: url(../../assets/images/close.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.close:hover {
+    background-image: url(../../assets/images/close-hover.png);
+    pointer-events: visible;
+}
+
+.modal-container {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    transform: translate(13.5%, -12.5%);
+    background-color: #fff;
+    display: table;
+    box-shadow: -2px 1px 23px 0px rgb(0 0 0 / 16%);
+    padding:25px 0px 45px 0px;
+    z-index: 10;
+}
+
+.modalcotent {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.modal-segment {
+    padding: 20px 0%;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.modal-segment label {
+    font-family: cursive;
+    padding: 10px 0px;
+    display: inline-table;
+    text-align: center;
+    border-bottom: 2px solid #ff8181;
+    width: 75%;
+}
+
+.plan-content {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 14px;
+    padding-top: 15px;
+}
+
+.important {
+    font-family: fantasy;
+    float: left;
+}
+
+.right {
+   float: right;
+}

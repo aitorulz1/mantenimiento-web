@@ -5,9 +5,20 @@ export default function Resultado({presupuesto}) {
 
  
     return (
-        <div className="resultado-container">
-            {(presupuesto === 0) ? 'Completa los datos' : `${presupuesto} €`}
-        </div>
-   
+        <div>
+        
+            {(presupuesto === 0) ? null 
+        
+            : 
+            
+            (
+
+            <div className="resultado-container">
+                El presupuesto final es de {presupuesto} €/mes
+            </div>
+            
+            )
+        }
+        </div>   
     )
 }

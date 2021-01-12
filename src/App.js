@@ -7,6 +7,7 @@ import Resultado from './components/Input/Resultado';
 
 import Spinner from './components/Extras/Spinner';
 import Button from './components/Button/Button';
+import Refresh from './components/Button/Refresh';
 
 import './App.css'
 
@@ -34,10 +35,8 @@ function App() {
 
 
 
+
  
-
-
-
   return (
     <div className="body">
     
@@ -67,15 +66,24 @@ function App() {
 
               { cargando ? <Spinner /> : null }
 
+
+              { cargando ? null :
+              
+              <div>
+
               <Summary 
                 data = { data }
               />
 
-              { cargando ? null :
-
               <Resultado
                 presupuesto = { presupuesto }
               />
+
+              <Refresh 
+                presupuesto = { presupuesto }
+              />
+
+              </div>
 
               }
 

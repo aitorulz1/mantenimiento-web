@@ -68,3 +68,20 @@
     width: 100%;
     text-decoration:none;
 }
+
+.instrucciones {
+    position: absolute;
+    right: 33%;
+    background-image: url(../../assets/images/question.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.instrucciones:hover {
+    background-image: url(../../assets/images/question-hover.png);
+    pointer-events: visible;
+}

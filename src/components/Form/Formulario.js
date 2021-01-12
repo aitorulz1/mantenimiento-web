@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import Error from '../Error/Error';
 import { obtenerDiferenciaPlan, obtenerDescuentoPeriocidad, obtenerDescuentoDigital  } from '../../middleware/helper'
 
-import './Formulario.css'
+import './Formulario.css';
+import Modal from '../Modal/Modal'
 
 export default function Formulario({guardarFinal, guardarCargando}) {
 
@@ -18,6 +19,12 @@ export default function Formulario({guardarFinal, guardarCargando}) {
 
 
     const { plan, idiomas, pago, digital } = data;
+
+    const [ modal, guardarModal ] = useState(false);
+
+    const showAndCloseModal = () => {
+        guardarModal(true)
+    }
 
     const onChange = e => {
         guardarData({
@@ -82,7 +89,13 @@ export default function Formulario({guardarFinal, guardarCargando}) {
             onSubmit = {onSubmit}
         >
 
-            { error ? <Error message='Todos los campos son obligatorios' /> : null }
+        { error ? <Error message='Todos los campos son obligatorios' /> : null }
+
+
+        <div className="instrucciones" onClick={showAndCloseModal} alt="descripción"></div>
+
+        {modal ? <Modal  guardarModal={guardarModal}  /> : null }
+
 
         <div className="plan">
 
