@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Error from '../Error/Error';
 import { obtenerDiferenciaPlan, obtenerDescuentoPeriocidad, obtenerDescuentoDigital  } from '../../middleware/helper'
-
+import PropTypes from 'prop-types';
 import './Formulario.css';
-import Modal from '../Modal/Modal'
+import Modal from '../Modal/Modal';
 
 export default function Formulario({guardarFinal, guardarCargando}) {
 
@@ -186,4 +186,9 @@ export default function Formulario({guardarFinal, guardarCargando}) {
 
         </form>
     )
+}
+
+Formulario.propTypes = {
+    guardarFinal: PropTypes.func.isRequired,
+    guardarCargando: PropTypes.func.isRequired 
 }

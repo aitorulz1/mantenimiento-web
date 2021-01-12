@@ -1,5 +1,6 @@
 import React from 'react';
 import './Refresh.css';
+import PropTypes from 'prop-types';
 
 export default function Refresh({presupuesto}) {
 
@@ -22,4 +23,8 @@ export default function Refresh({presupuesto}) {
 
         </div>
     )
+}
+
+Refresh.propTypes = {
+    presupuesto: PropTypes.object.isRequired
 }

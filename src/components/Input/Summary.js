@@ -1,6 +1,6 @@
 import React from 'react';
 import { primeraMayuscula } from '../../middleware/helper';
-
+import PropTypes from 'prop-types';
 import './Summary.css';
 
 export default function Summary({data}) {
@@ -18,4 +18,8 @@ export default function Summary({data}) {
             <div className="summary-line"> <span className="summary">Digital: </span> <span className="summary-answer">{ primeraMayuscula(digital) } </span></div>
         </div>
     )
+}
+
+Summary.propTypes = {
+    data: PropTypes.object.isRequired
 }

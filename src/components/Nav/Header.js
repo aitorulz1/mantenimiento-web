@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
-import  Logo  from '../../assets/logo/llaves.png'
+import  Logo  from '../../assets/logo/llaves.png';
+import PropTypes from 'prop-types';
 
 
 export default function Header({titulo}) {
@@ -12,4 +13,8 @@ export default function Header({titulo}) {
             </header>
         </div>
     )
+}
+
+Header.propTypes = {
+   titulo: PropTypes.string.isRequired
 }

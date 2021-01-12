@@ -1,5 +1,6 @@
 import React from 'react';
 import './Resultado.css';
+import PropTypes from 'prop-types';
 
 export default function Resultado({presupuesto}) {
 
@@ -21,4 +22,9 @@ export default function Resultado({presupuesto}) {
         }
         </div>   
     )
+}
+
+
+Resultado.propTypes = {
+    presupuesto: PropTypes.object.isRequired
 }

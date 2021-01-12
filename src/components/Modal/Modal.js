@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.css';
+import PropTypes from 'prop-types';
 
 export default function Modal({guardarModal}) {
 
@@ -68,4 +69,8 @@ export default function Modal({guardarModal}) {
                 </div>
         </div>
     )
+}
+
+Modal.apply.propTypes = {
+    guardarModal: PropTypes.func.isRequired
 }
